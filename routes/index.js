@@ -5,17 +5,26 @@ var models = db.models;
 var Hotel = models.Hotel;
 var Restaurant = models.Restaurant;
 var Activity = models.Activity;
+var Promise = require('bluebird');
 
 router.get('/', function ( req, res, next) {
-	Hotel.find({})
-	.then(function (hotels) {
-		console.log(hotels);
-		
-		res.render('index', {hotels: hotels});
+
+	var promiseArr = [Hotel, Restaurant, Activity];
+
+	Promise.map(promiseArr, function (model) {
+		return model.find()
 	})
-	.catch(function(err){
-		res.send(err);
+	.then(function (groups) {
+		console.log(groups);
+		res.render('index', { groups: 
+			[
+			{label: 'Hotels', items: groups[0]},
+			{label: 'Restaurants', items: groups[1]}, 
+			{label: 'Activities', items: groups[2]}
+			]
+			});
 	})
+	
 })
 
 

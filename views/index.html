@@ -1,17 +1,27 @@
 {% extends 'layout.html' %}
 		{% block content %}
-		<h2>Welcome</h2>
+		
 		<div class="container">
-			<form>
-
-				{% for group in groups %}
-				<label for="{{group.label}}">{{group.label}}</label>
-				<select name="{{group.label}}" id="{{group.label}}">
-					{% for item in group.items %}
-						<option value="{{item.id}}">{{item.name}}</option>
-					{% endfor %}
-				</select>
-				{% endfor %}
-			</form>
+			<div class="row">
+				<div class="col-lg-8 col-md-6 col-sm-12">
+					map
+				</div><!-- end col-lg-8 -->
+				<div class="col-lg-4 col-md-6 col-sm-12">
+					<form>
+						{% for group in groups %}
+							<div class="form-group col-lg-12">
+								<label for="{{group.label}}" class="control-label">{{group.label}}</label>
+								<select name="{{group.label}}" id="{{group.label}}" class="form-control">
+									{% for item in group.items %}
+										<option value="{{item.id}}">{{item.name}}</option>
+									{% endfor %}
+								</select>
+							</div><!-- end input-group -->
+						{% endfor %}
+						
+					</form>
+				</div><!-- end col-lg-4 -->
+			</div><!-- end row -->
+			
 		</div>
 		{% endblock %}

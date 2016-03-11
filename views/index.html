@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+		{% block content %}
+		<h2>Welcome</h2>
+		<div class="container">
+			<form>
+				<label for="hotels">Hotels</label>
+				<select name="hotels" id="hotels">
+				{% for hotel in hotels %}
+				<option value="{{hotel.id}}">{{hotel.name}}</option>
+				{% endfor %}
+				</select>
+
+			</form>
+		</div>
+		{% endblock %}

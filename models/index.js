@@ -55,17 +55,6 @@ function arrayJoin(arr) {
 	return arr.join(", ");
 };
 
-// connect()
-// .then(function() {
-// 	return Activity.find({})
-// })
-// .then(function(result) {
-// 	console.log(result);
-// })
-// .catch(console.log);
-
-// console.log(Hotel);
-
 module.exports = {
 	connect: connect,
 	models: {

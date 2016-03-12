@@ -15,7 +15,6 @@ router.get('/', function ( req, res, next) {
 		return model.find()
 	})
 	.then(function (groups) {
-		console.log(groups);
 		res.render('index', { groups: 
 			[
 			{label: 'Hotels', items: groups[0]},

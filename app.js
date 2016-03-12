@@ -11,9 +11,8 @@ app.set('views', path.join(__dirname, '/views'));
 app.set('view engine', 'html');
 
 app.use('/static', express.static(path.join(__dirname, '/public')));
-app.use('/vendor', express.static(path.join(__dirname, '/node_modules')));
-app.use('/images', express.static(path.join(__dirname, '/images')));
-app.use('/photos', express.static('https://s3.amazonaws.com/lampimages/images'));
+app.use('/bootstrap', express.static(path.join(__dirname, '/node_modules/bootstrap/dist')));
+app.use('/jquery', express.static(path.join(__dirname, '/node_modules/jquery/dist')));
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());

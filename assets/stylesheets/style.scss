@@ -1,0 +1,57 @@
+body {
+/*	font-family: 'Roboto Condensed', sans-serif;
+*/
+	font-family: 'Abel', sans-serif;
+	font-size: 16px;
+	background-color: #ffcc99;
+}
+
+.navbar {
+	margin-bottom: 0px;
+}
+
+.navbar-inverse .navbar-brand {
+	color:#03CBFD;
+	&:hover {
+		color:#03CBFD;
+	};
+}
+
+.dropdowns form:after {
+	content: " ";
+	display:block;
+	clear: both;
+}
+
+.dropdowns {
+	background-color: #fff;
+	padding: 10px 0;
+	border-style: solid;
+	border-radius: 10px;
+	border-width: 1px;
+}
+
+.right-panel {
+	margin-top: 15px;
+	
+}
+
+.navbar-brand.icon {
+	padding-right: 5px;
+
+}
+
+.map {
+	height: 80vh;
+}
+
+.pull-left {
+	margin-left: 0px;
+}
+
+
+/*
+.navbar-inverse .navbar-nav &gt; li &gt; a, .navbar-inverse .navbar-brand {
+    color: $your-color-here;
+}
+*/

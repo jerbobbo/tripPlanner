@@ -1,25 +1,28 @@
 {% extends 'layout.html' %}
 		{% block content %}
 		
-		<div class="container">
+		<div class="container pull-left pull-up">
 			<div class="row">
-				<div class="col-lg-8 col-md-6 col-sm-12">
-					map
+				<div id="map-canvas" class="col-lg-8 col-md-6 col-sm-12 map">
+					
 				</div><!-- end col-lg-8 -->
-				<div class="col-lg-4 col-md-6 col-sm-12">
-					<form>
-						{% for group in groups %}
-							<div class="form-group col-lg-12">
-								<label for="{{group.label}}" class="control-label">{{group.label}}</label>
-								<select name="{{group.label}}" id="{{group.label}}" class="form-control">
-									{% for item in group.items %}
-										<option value="{{item.id}}">{{item.name}}</option>
-									{% endfor %}
-								</select>
-							</div><!-- end input-group -->
-						{% endfor %}
-						
-					</form>
+				<div class="col-lg-4 col-md-6 col-sm-12 right-panel">
+					<div class="dropdowns">
+						<form>
+							{% for group in groups %}
+								<div class="form-group col-lg-12">
+									<label for="{{group.label}}" class="control-label">{{group.label}}</label>
+									<select name="{{group.label}}" id="{{group.label}}" class="form-control">
+										{% for item in group.items %}
+											<option value="{{item.id}}">{{item.name}}</option>
+										{% endfor %}
+									</select>
+									<span style="float: right; " class="glyphicon glyphicon-plus"></span>
+								</div><!-- end input-group -->
+							{% endfor %}
+							
+						</form>
+					</div>
 				</div><!-- end col-lg-4 -->
 			</div><!-- end row -->
 			
